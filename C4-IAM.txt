@@ -1,0 +1,983 @@
+ hi there welcome to this new learning
+series called I am and servers and AWS
+for security by the way I'm Samuel and
+AWS cloud architect cloud events listed
+cloud author working for simply long
+here in this section we're gonna talk
+about what is security in AWS and then
+we're going to slowly or gradually move
+on to the other topics like types of
+security available on AWS out of all the
+services why I am is the most preferred
+one and then we're gonna talk about what
+is I am in general how it works the
+building blocks are components in I am
+and the features it the attractive
+features that it provides that makes I
+am stand out from the rest of the
+services available we're going to talk
+about that and then we're gonna end
+today's session with a demo about how I
+am gets well interacted with other
+services in Amazon and help create a
+secure environment in the cloud let's
+talk about aw security now cloud
+security is the highest priority in AWS
+and when we host our environment in the
+cloud we can be rest assured that we are
+hosting our environment in a data center
+or in a network architecture that's
+really built to meet the requirement of
+the most security sensitive organization
+and this high level of security is
+available to us on a pay-as-you-go type
+meaning there is really no upfront cost
+at that we need to pay and the cost for
+using the service is lot lot cheaper
+than what it is in an on-premises
+environment so AWS cloud provides an
+secure virtual platform where we can
+deploy our application now compared to
+the on-premises with AWS the security
+level is very high and the cost involved
+in using or attaching that type of
+security to our application is very low
+compared to on-premises does really no
+upfront cost and the cost is very lower
+whatever cost that we pay is very lower
+than what it would be in our premises
+and
+all this contributes to the secure
+environment we can get through I am in
+AWS cloud there are really many types of
+security services available in AWS to
+name a few or to name the familiar ones
+I am stands first followed by a key
+management system kms and then we have
+Cognito that's another service and web
+access firewall väth is another security
+service in AWS now let's start our
+discussion by talking about I am and
+that's what this whole series is about
+now I am or identity and access
+management it really enables us to
+manage access to AWS services and AWS
+resources in a very secure manner with I
+am we can create groups we can actually
+allow those users or groups to access
+some servers or we can sort of deny them
+to access the service which we want
+that's all possible through Identity and
+Access Management and this feature comes
+with no additional charge let's talk
+about how things were before
+AWS before AWS or before I am in general
+it was not that safe in a corporate to
+share the password over the phone or
+through the email that was the practice
+that was existed at that time now we all
+can remember the days when we need to
+switch to a different account or we had
+just one admin password commonly stored
+in a location or one person would reset
+it and maintain it at any time or we
+need to login we call the person ask for
+the admin password over the phone and
+then we try logging in that was not
+secure at all back that no somebody
+could walk by and sort of eavesdrop you
+know get the password now they walk away
+with the password with them so they're
+all possible when we share the password
+over the phone and through the internet
+or email
+now with AWS a lot of options are
+available that I'm not sharing password
+over the unsecure medium now a slack is
+a third party product available with AWS
+it's not an AWS product but slack is in
+third party application that's hosted on
+AWS and it's really a communication tool
+that helps people to share a document so
+now we're not sharing
+the password over the forum rather
+through the applications and no
+eavesdrop person can really catch the
+password and you know tried in their
+system to access our environment that's
+not possible so you see the difference
+now back then sharing password was only
+through phone and email and you would
+write it on a paper and he gave it to
+somebody but now technology is providing
+provisions enough for us to share the
+password in a secure way we're still
+talking about I am I am as an web
+servers for securely controlling access
+to the AWS resource now it really helps
+us to authenticate our sort of limit
+access to a certain set of users
+accessing the AWS account or certain set
+of users accessing a certain set of
+resources in AWS account now you see
+this picture we have an I am
+administrator who's trying to allocate
+permissions to different group of people
+so we have Group one on the top and blue
+two in the middle and Group three
+towards the end the administrator using
+I am or I am empowers the administrator
+al of access to certain group to certain
+resources that's what I am is all about
+now let's talk about the building blocks
+or let's talk about the elements that
+make and complete I am so the elements
+are categorized into six different
+elements we have the principal in I am
+the authentication they request the
+actual request coming in the
+authorization allowing denying access
+actions what are the scope of actions
+can be taken and on what resource is it
+easy to is it
+RDS is an s3 bucket so what resource
+these actions are applied to so they are
+the basic elements of an I am workflow
+let's talk about principle for example
+an action on AWS resource can only be
+performed by a principle an individual
+user they can be a principle a role in
+AWS I am it can be a principle as well
+in other words a principle as an entity
+that can take an action on an AWS
+resource you know a principle can be an
+user a principle can be a role a
+principle can be an application that's
+are trying to access the AWS can
+and secondly authentication of
+authentication is a process of
+confirming the identity of the principal
+trying to access the AWS environment now
+how do we get authenticated or how does
+the user get authenticated by providing
+credentials or the required keys to
+validate that this is what he or she is
+as for what's in the record so all
+principal must be authenticated and we
+get authenticated using the username and
+password to log into the console if it
+is CLI or we get authenticated using the
+access key and the secret access key the
+other component that makes up I am is
+request when a principal tries to use
+the AWS management console what the
+principal is doing or what the user is
+doing is sending a request to the AWS
+environment and the request will have
+the principal actually wants to perform
+is it and put requests or is it a get
+request or is the delete request stuff
+like that and it's also going to carry
+information about on which resource and
+the action needs to be done is it on ec2
+one is it on s3 buckets simply long comm
+stuff like that so it has a specific
+action that it wants to perform and the
+resource on which it wants to perform
+and also some information about from
+where the request is originating from is
+it within an ADA blazing with almond or
+is it with another cloud service
+provider or is it with on-premises stuff
+like that so these information will be
+present in the request authorization now
+this I am uses information from the
+request context at the check for
+matching policies and it determines it
+takes a decision whether to allow are to
+deny the request now here it has a logic
+by default all the resources are denied
+and I am authorizes you request only if
+every part of the request is allowed by
+a matching policy so there's an
+evaluation logic and that says but
+default all requests are denied and if
+there is an explicit allow then it
+overrides the default denied and if you
+are explicitly denying a service then
+all the allow statements gets overridden
+and all the other statements gets over
+return and this explicit denied stance
+by default on
+the AWS account root user has access to
+all the resources in that account so if
+you're not signed in as a root user then
+we must be specifically granted
+permission through a policy in other
+words we need to be authorized through
+the policy now let's talk about action
+now after authenticating and authorizing
+the request AWS approves the action that
+we are about to take now I'm using
+action we can view the content we can
+create a content or create a bucket or
+create an ec2 instance I can edit
+content or even I can delete a resource
+that's all based on the action that I'm
+allowed to do now that was about actions
+now where is the action performed the
+action is performed kondal sources a set
+of actions can be performed on a
+resource and anything that's not
+mentioned in the action or anything
+that's not tagged with the action and
+the resource they don't get to complete
+for example let's say if you attempt to
+delete and I am role and you also
+request to access the ec2 instance for
+that role then the request gets denied
+now let's talk about some of the other
+components of I am so the other
+components are I am are the basic
+building block is an user and then many
+users together they form a group and
+then policies are the engines that
+allows or denies a connection based on
+policy one gets to access or gets no
+access to a resource and then roles
+roles are another component roles are
+temporary credentials I would say that
+can get assumed to an instance as and
+when needed let's talk about this
+component called user in an I am with I
+am we can securely manage access to AWS
+services and how we can create an IM
+user anytime there is a new employee
+joining our cartridge so it's a
+one-to-one mapping you know one user or
+one employee get a user name directly
+attached to them and a user name or a
+user is an account specific thing you
+know it's very local to that AWS account
+that we are using so for in detail and I
+am user is an entity that we create in
+an AWS environment to
+and a person are a service and that
+interacts with AWS environment and this
+user is going to have some credentials
+attached to them and by default they do
+not have a password and they do not have
+any access key or secret access key
+attached to them
+in fact literally no credentials of any
+kind no we must create an user and we
+must create the type of credential that
+gets attached to the user do they want
+to access CLI so based on that we would
+be adding credentials to them a user by
+default is not authorized to perform any
+action in AWS and the advantage of
+having one-to-one user is that we can
+assign permissions individually to that
+user for example we might want to assign
+administrative permissions to few users
+who can administer our AWS environment
+and users our entity within an AWS
+account users don't have to pay
+separately you know they start using the
+servers and that get bills under the
+account they are attached to so separate
+users doesn't mean that separate payment
+for those users they are just users in
+our account and you know the whole
+account gets to pay for the resources
+that they provision again the I am user
+does not always represent a person and I
+am user is really just an identity with
+associated credential and permissions
+attached to it it could be an actual
+person who is a user and it could be an
+application also who is a user next we
+will talk about groups talking about
+groups or understanding group is very
+easy a collection of user forms and I am
+group and we can use iam group to
+specify permission for multiple user so
+that any permission that's applied to
+the group is also applied to the users
+who are at add to that group now there
+are a few things you might want to know
+about group a group can have many users
+and a user they can belong to many
+groups but groups can be nested meaning
+group can only have users a group cannot
+have a group inside a group that's not
+possible
+and there's nothing called a default
+group that sort of automatically
+includes all users in the AWS account if
+you want to have a group
+we will have to create a group now let's
+take this diagram for example now this
+is a diagram of an small company now the
+company owner creates an admin group for
+users to create and manage other users
+as the company expands every day and the
+admin group creates a developer group
+and a test group each of these group
+consists of users users who are people
+users who are applications that interact
+with AWS environment so the different
+types of users we have our Jim is a user
+Brad is an user and dev app one is a
+user and and so on
+so each users have an individual set of
+security credential like I said it's
+one-to-one and the ten users that we see
+on screen are shared between our they
+belong to multiple groups in the account
+and managing group is quite easy we said
+permission to the group and that
+permission gets applied to all the users
+automatically in the group and after we
+applied the policy if I add another user
+to the group the new user will
+automatically inherit all the policies
+all the permissions that's already
+mentioned in that group so
+administrative burden is sort of taken
+away administrative burden about user a
+privilege or user permission management
+is sort of taken out with I am alright
+the next thing we will want to discuss
+this policy a policy sets permission and
+controls the access to AWS resource and
+the policies this permissions and
+controls are stored in JSON format a
+policy is very clear document it defines
+who has access to a resource and what
+are all the actions they can perform so
+in other words policy is an entity in
+AWS that when a policy gets attached to
+an identity or resource you know it
+really defines the permission what they
+can and cannot do and AWS it evaluates
+these policies when a principle such as
+a user makes an a request and the
+permission statement and the policy it
+really defines whether the user is
+allowed to access a service or easy
+denied to access a service or a let
+take this example now we have task the
+task is to give Paul who's a developer
+access to Amazon s3 environment and what
+you're looking at is a snippet of what a
+policy would look like so these are some
+questions we will have to answer or
+these are some question the policy tries
+to answer and once it found an answer
+then it becomes incomplete policy so who
+wants access to the service it's Paul
+who wants access to the service and what
+action do Paul want now Paul wants to
+download or Paul wants to upload objects
+in s3 in JSON language it's otherwise
+called Paul wants to get information
+Paul wants to put information otherwise
+Paul wants to get object Paul wants to
+put object in s3 and which resource does
+he want now in this case every bucket
+the star symbol represents all buckets
+in history so which resource it's all
+bucket in history so we can start
+reading already from the data present
+here so who wants access Paul wants
+exits what action does he want he wants
+to get he wants to put and what's the
+resource that he's trying to access or
+you want to give him access it's all the
+bucket in AWS and when does he want
+these an additional statement that goes
+in a policy so since when does he want
+that access he wants access till March
+2nd 2019 so all this who all this action
+all this resource you know till the time
+all this gets allowed so this is the
+statement that really defines now this
+is all refer to an allow statement or
+does this all refer to a deny statement
+if we had denying here it's the direct
+opposite of what we discussed but we
+have allow that means Paul is allowed to
+get and put access in an s3 bucket and
+all the buckets in s3 till March 2nd
+2019 he's allowed to access the
+resources so if we put together put all
+the information that we have gathered or
+all the answers that we have so far if
+we put together in a JSON format this is
+how it's gonna look like so the effect
+is allow or deny here it's allowing and
+the principle is any who can access it's
+any and action it's any bucket in s3 any
+action in Esther day put get requests
+and the resources any bucket in s3 so
+that's how a basic policy would look
+like that's how a basic policy is formed
+by answering those basic questions so
+let's talk about the types of policies
+so we have two broad categories manage
+policy and inline policy the manage
+policy it's the default policy that we
+attach to multiple entries bead users
+feed groups and lead roles in our AWS
+account on the other hand inline policy
+are the policies that we create and
+manage them and these policies are
+embroidered directly into a single user
+group or a role so if I need to brief it
+a little bit more then a manage policies
+our standalone identity based policies
+that we can attach to multiple users
+groups and roles in our AWS account we
+can use two types of managed policies in
+other words manage policies they
+themselves have do categories one is AWS
+manage for a C's which is created and
+managed by a lab Rios and the other one
+is customer manage policies just like
+the name says it's managed by the
+customer now we can create an edit and I
+am policy in visual editor or simply
+create a JSON policy document directly
+and uploaded in the console and start
+using them so that's manage policy on
+the other hand inline policies are
+policies that we create and manage and
+that are embedded directly into a single
+user group or role let's talk about this
+next component called role now this role
+is very similar to everything that we
+discussed so far it's a self permission
+that defines what actions are allowed
+and denied by an entity in an AWS
+console the role is very similar to an
+user I said very similar I didn't say
+it's the same as the user but I said
+it's very similar to the user and the
+difference is that user is hard-coded
+user permissions are hard-coded but the
+role permissions are accessed by any
+entity you know beat a user or a beat
+and AW service and moreover the role
+permissions are temporary on the other
+hand user permissions are permanent and
+the role permissions are temporary
+so in detail
+a roll is very similar to a user in that
+it's an edible identity with permission
+policies that determines what the
+identity can and cannot do in AWS now
+instead of it being uniquely associated
+with one person a role is intended to be
+assumable by anyone who needs it rules
+generally do not have an long-term
+credential you know password or access
+Keys associated with it you know it does
+not have long-term credentials it only
+has temporary credentials created
+dynamically and provided to the user as
+in when the user assumes a role and
+wants to access any service roles can be
+assumed by users roles can be assumed by
+applications roles can be assumed by
+services that normally they don't have
+access to AWS resources for example you
+might want to grant a user in your AWS
+account access to your resource that
+they do not normally have our grant
+users in one aw account access to
+resource in another AWS account now this
+is something that we don't have by
+default and this is something we may not
+need all the time or you might want to
+allow a mobile app to use AWS resource
+but you do not want to save the key or
+save the credential or save the
+passwords in the mobile app or sometimes
+you might want to give access to
+resources who already have identities
+defined outside of AWS like a user who's
+already an Google or Facebook
+Authenticator if you want to give them
+some service or if you want to let them
+to access some of the resources in your
+account we can use roles for that
+purpose or you also might want to grant
+access to your account to a third party
+a consultant or an auditor so they can
+for some time get some temporary access
+to audit our AWS resources remember
+they're not permanent users it's just
+temporary users they want some temporary
+access to our environment till the audit
+is over so for those cases roles are a
+very good use case so let's take this
+example let's see where role sits and
+let's see how roles give permission to
+other services so here is a scenario
+where we're an easy-to instance
+once access to an s3 bucket but default
+though both of them were created by the
+same username are the same admin they do
+not have access by default so by default
+they don't have access and I also do not
+want to give permanent access you know
+one on one hot coded permanent access
+instead I would like to create and share
+access so that's possible through role
+so coming back to the discussion the
+scenario here is that an ec2 instance
+wants to access data in an s3 bucket so
+the first thing is to create a role or a
+permission we saw how that's done right
+using policies roles use policies policy
+is the actual working engine for any
+permission related actions right so
+create a role with an appropriate policy
+that gives access to s3's
+bucket and then launch an ec2 instance
+with the role attached to it
+we said roles are assumed by any entity
+right it could be user it would be an
+application it could be a service it
+could be another resource in AWS account
+so here it's another resource in AWS
+account right so we create a role and we
+attach it to an ec2 instance so now the
+easy to instance can assume the role now
+the same role can be attached to another
+ec2 instance the same role can be
+attached to another user the same role
+can be attached to another database
+service we get the idea right roles can
+be assumed by anyone so when the ec2
+instance want to communicate with s3 it
+contacts the role and then the role
+gives this ec2 instance some temporary
+username and password that expires after
+one our let's say so it's a temporary
+username and password now with that
+temporary username and password the ec2
+instance can access the s3 bucket and
+access the file with the credential that
+it already has and that credential is a
+temporary one and the credential will
+expire after one our or how much
+overtime the admin sets it to be and
+then the next time when s when an ec2
+instance wants to contact this three
+it'll have to contact the role and the
+role will propose a new access key and
+secret access key in other words a new
+credential with that new credential
+the second time the ec2 instance will be
+able to contact the s3 bucket and get
+the information so the password is not a
+permanent or a one-time or a hard-coded
+password it keeps rotating it's a token
+it's a secure token that an ec2 instance
+or any application that uses the rule
+gets to access the resources on the
+other end now let's talk about the
+features of I am the main feature of iam
+is that I can create separate username
+and password for individual users or
+resources and I can delegate access know
+those days where we had just one
+username and password for admin and we
+need to call the other person to get the
+username and password over the phone if
+it gets compromised
+you know the whole account gets
+compromised stuff like that those issues
+are gone I can create separate username
+and password for all thousand users in
+my account
+no more username and password sharing I
+can manage access to all those thousand
+accounts and a very simple and an easy
+way so I am provides shared access for
+all the thousand users in my account it
+provides share access to the AWS
+environment and the permissions that can
+be given through I am are very granular
+now we saw how restrictions can be put
+on get requests you know we can allow
+the user to download information and not
+update an information so that's possible
+through the IM policies that we looked
+at some time back and with the use of
+roles you know we're authenticating an
+ec2 instance instead of
+the application running on top of it so
+if there are like 10 or 20 applications
+running on top of an ec2 instance
+instead of creating a separate username
+and password for all those twenty
+instances I can create a role and assign
+that role to the ec2 instance and all
+the applications running on the ec2
+instance get a secure access to the
+other resources use the role potential
+that's provided to that ec2 instance
+now besides username and password I am
+also supports multi-factor
+authentication where we provide our
+credential the username and password
+plus and OTP from our phone or and
+randomly generated number that gets
+displayed in our phone before Amazon
+console or
+before Amazon CLI would authenticate and
+lets us access some of the service in
+the account so it's called multi-factor
+authentication its username and password
+plus something else from what you have I
+am also provides identity Federation if
+the user is already authenticated with a
+corporate ad or Facebook or Google you
+know I am can be made to trust that
+authentication method and then allow
+access based on that authentication now
+without the Federation what would happen
+is the users will have to remember two
+passwords you know one for on-premises
+and one for cloud anytime they work on
+on-premises they'll have to use one set
+of password and any time they switch to
+the cloud which is gonna be very
+frequent in a everyday so anytime they
+switch to the cloud they will have to
+again type in the cloud username and
+password now with identity Federation we
+can sort of Fed rate or we can connect
+both the authentication systems both
+on-premises and I am so users can just
+use one username and password for both
+on-premises and cloud environments and
+all that we saw so far it's free to use
+there is no additional charge for I am
+security there is no additional charge
+for creating additional users groups or
+policies it's a free service comes along
+with any account I am is an PCI DSS
+compliant product and I am consulate
+password policy where we can reset the
+password remotely or rotate the
+passwords remotely and we can set rules
+like and how a user should pick and
+password it should not be the one that
+was used in the past any of the past
+three times stuff like that so you get
+the idea right how the features of I am
+helped us to build and a secure
+authentication and authorization system
+in our for our AWS account alright it's
+time to do a quick lab let's let's put
+all the knowledge that we have earned so
+far together and apply it and try a lab
+and solve the problem so here is a
+problem statement we need to create an
+s3 bucket for a company where users can
+read or write the data only if they are
+multi-factor
+indicated so that could be like 20 users
+in an account but a user is allowed to
+read or write a data in an s3 bucket
+only if the user is multi-factor
+authentication you know this is a very
+good use case if we have sensitive data
+in an s3 bucket and you only want
+privileged or MFA authenticated users to
+do changes to those buckets and for
+those privileged users you would enable
+multi-factor authentication so let's see
+how that's done before that let me talk
+to you a bit more about multi-factor
+authentication a multi-factor
+authentication is that additional level
+of security process it's provided by AWS
+here the user's identity is confirmed
+only after the user proposes or the user
+passes to level of verification now one
+being the username and password and
+another being and OTP that gets
+generated in this case it's the mobile
+phone it could also be an RSA token key
+that generates the one-time password
+that's possible as well but in this case
+it's the mobile phone now that's gonna
+be very similar to how we login to our
+gmail account sometimes when we log into
+a gmail account and I mean if you have
+the proper setting enable it's gonna
+send and one-time password to the mobile
+phone and only after we put that
+information it's gonna let us login
+let's see how all this is done in an AWS
+account so the first thing is to log in
+to the AWS account create a user and
+attach the user to the virtual MFA
+device now we're gonna use Google
+Authenticator here and we're gonna
+attach the user to Google Authenticator
+and make the user use the Google
+Authenticator one-time password every
+time he logs in to the account now this
+is an addition to the username and
+password that he or she already has
+right so the first thing is to log into
+the account connect or sync the virtual
+appliance with the AWS username and
+password now when we think there will be
+an one time password that gets shown in
+the phone type in the password in the
+AWS console and in the phone and the
+user name comes to same and from that
+point onwards the user any time they log
+in they will have to propose their
+username and password which is the first
+step of security and there
+once they typed in the username and
+password type in the MFA code that gets
+generated on the phone that would be the
+second step or security or the last step
+of security once that is done the
+account is gonna let them log in and
+access the AWS resources alright so in
+order to test I am
+MFA s3 together this is what we're gonna
+do so we're gonna create a bucket and
+we're gonna have two users and we're
+gonna allow or deny access to the s3
+bucket to those two users based on
+whether they are MFA authenticated or
+not and on purpose we gonna assign MFA
+to one user and no I'm afraid to the
+other user like you might have guessed
+by now the user with MFA will have
+access to their bucket and the user with
+no MFA attached will not have access to
+the bucket and both of them are gonna
+have full s3 services but MFA like I
+said is one layer above the other
+permissions Emma Fame stands at all time
+so irrespective of whether the
+underlying policy says but they have
+full access to the s3 bucket they are
+not going to because MFA stands on top
+of it let's see how that's done to begin
+with firstly we need a bucket so let's
+create a bucket so I'm in my AWS console
+so let me go to s3
+and in here create a bucket call that
+bucket as simply learn MF a bucket and
+let me put it in not Virginia and create
+alright so that's done now I'm gonna put
+a separate folder in here
+I'm going to create another folder in
+here and the name of the folder is tax
+documents now this is where I'm planning
+to keep my tax files
+my privileged users to be able to upload
+and download information from the tax
+document so on the bucket side it's
+partially done or on the SD side it's
+partially done so let's go back to I am
+and here are we're gonna create two
+users one a junior employee and another
+one and a senior employee the senior
+employee is the one who's gonna have MFA
+access and more access to the s3 bucket
+and the junior employee is the one who's
+not gonna have access to that particular
+bucket so let's get started let's create
+an user under I am
+click on users and let's create a user
+call his user jr. right so he's a junior
+user and for the password set a password
+the user does not need to create a new
+password at sign-in because it's a test
+environment and the user who creates the
+username and the user are the same
+person
+so let's keep it simple username
+password management console access and
+this user is gonna have full s3 bucket
+access all right this is really the
+policy we should be familiar
+would this DSN document by now it says
+effect is allow and what action any
+action in destiny and what resource
+anybody who's attached to it review and
+create a user so this user is having s3
+full access now let's create another
+user call them as senior employee
+all right attach a policy to the user
+you know from the surface level both of
+them have the same permissions both of
+them have s3 full access
+all right so both of them have s3 full
+access as we see there's one thing
+different we're gonna do to this senior
+employee now we're going to attach MFA
+to this implant so the way we would do
+it is under the summary section of that
+particular user click on security
+credential and see here is a place we
+can attach an MFA to this user
+so let's attach MFA to this user for MFA
+I can use both virtual MFA or Hardware
+MFA this being in lab environment we're
+gonna use virtual MFA now that is an
+application there are a lot of
+applications available but there is one
+application that I'm using at the moment
+called Google Authenticator
+so once we have installed the
+application and once it is running
+so I can go to what she will MFA device
+and once it is running I can scan the
+code using the Gulag or Authenticator in
+my mobile phone once you turn on the
+application and I want to do scan the
+barcode that is showing right here now
+that's gonna give us codes that we can
+use and we will have to put in those
+codes here twice we'll have to wait for
+some time and it would generate and
+second set of key that we can put so my
+first set of key is 4 0 2 3 5 1 right
+I'll have to wait for some time and then
+it would throw me a second set of key
+it's like validating twice right here so
+let me put on my second set of key
+so this user is now MFA authenticated
+user so anytime this user logs in it's
+gonna ask for MFA anytime this user
+proposes something it's going to attach
+the MFA key along with it all right so
+we're done with the I am what have you
+done what I am we have created two users
+both of them have a safe Alexis but one
+of them have MFA access and the other
+one does not have MFA access and based
+on whether the user is having MFA or not
+you know we're identifying privileged
+users by this MFA alright so based on
+whether the user has MFA or not are we
+gonna allow deny access in the s3 bucket
+so we already have a bucket we already
+have a folder and this is a very
+privileged folder pod here I would like
+to restrict access based on whether the
+user is having MFA or not so let me
+create a bucket policy here
+now here's a policy that I have written
+the policy says that you know under tax
+document folder give access only if the
+user is MFA authenticated right if the
+user is not MFA authenticated simply
+deny the access to that user so as you
+might guess right now the user one will
+not have access or the junior employee
+will not have access because it's a
+privilege then you know junior employee
+might tend to delete them unknowingly
+and only privileged users get access to
+the tax document because it's
+confidential because it's privileged
+because if it gets deleted we won't be
+able to get it back for those reasons
+right so apply the bucket policy
+not try logging in as the different
+users and see how the permissions are
+applied on both the users all right so
+let's make a note of the I am URL
+and then the 2 usernames and password
+let's login
+so let me log in as the privileged user
+sure enough I'm being asked for an MFA
+code let me put my MFA code
+so let's directly navigate to the s3
+bucket right here is my privileged path
+let me try uploading some content claim
+forms
+sure enough I'm able to upload content
+into it will I be able to delete
+yes unable to delete as well now let's
+see what's the situation for the other
+user so let's login as the other user
+navigate to the SD bucket
+if you noticed when logging in it did
+not ask for an mfa code because the user
+is not set up for MFA so navigate to the
+folder which we want to test
+I'll try adding some files
+as you see it's failing to add content
+into this bucket it shows error because
+the bucket policy is requiring MFA and
+this user is not MFA and we did that in
+I am or under I am but still as you see
+you know they will be able to view the
+content in the bucket they can do all
+that we have specifically restricted
+access to upload and download content
+from the bucket and that's exactly this
+user is now denied with all right let's
+summarize what did we learn we began our
+discussion with types of AWS security
+available with I am you know key
+management system cognitive web access
+firewall and then we started our
+discussion or and then we went deep into
+the discussion about I am identity and
+access management and then we discussed
+about the different components present
+and I am that's users group policies and
+rows and we discussed about all of them
+in detail and we also looked at the
+features of I am feature of I am is
+being able to have a share access to an
+account granular permissions being able
+to provision or provide granular
+permissions being able to are providing
+an application a secure access to the
+other AWS resources and being able to
+attach multi-factor authentication to an
+IM user that's something we discussed as
+features of I am and then we did a lab
+on s3 where we had to user 1 user was
+privileged over the other I mean we were
+allowing denying connection based on
+whether the user is MFA authenticated or
+not I mean if I need to tell clearly we
+allowed or we denied editing a file or
+uploading a file to a particular folder
+based on whether the user is an MFA
+authenticated user or not and that
+folder is a very critical folder we
+cannot afford to have any junior
+employee delete any content or upload a
+wrong content in it by mistake that's
+what we saw I believe you really enjoy
+the session along with me we will meet
+you again in another similar learning
+video till then stay tuned and bye for
+now
+hi there if you like this video
+subscribe to the simple learn YouTube
+channel and click here to watch similar
+videos sinnard up and get certified
+click here 
